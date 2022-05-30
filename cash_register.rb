@@ -48,8 +48,12 @@ class CashRegister
       if input_list.include?(',')
         basket_array = input_list.split(',')
         Basket.sort_items(basket_array, product_hash)
+      elsif product_hash.has_key? input_list.upcase
+        Basket.sort_items([input_list], product_hash)
       else
-        puts "Invalid input! Please follow the instructions and try again"
+        message = "Invalid input! Please follow the instructions and try again"
+        puts message
+        message
       end
     end
   end

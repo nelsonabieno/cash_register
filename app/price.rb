@@ -14,7 +14,7 @@ class Price
       total_price += price
     end
 
-    puts "total_price: #{total_price}€"
+    puts "total price: #{total_price}€"
     "#{total_price}€"
   end
 end
