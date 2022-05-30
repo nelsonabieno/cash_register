@@ -13,8 +13,8 @@ class Price
       price_hash[code] = price
       total_price += price
     end
-    total_price
-    puts "total_price #{total_price}€"
+
+    puts "total_price: #{total_price}€"
     "#{total_price}€"
   end
 end

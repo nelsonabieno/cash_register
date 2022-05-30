@@ -45,7 +45,7 @@ iii. Run `bundle install` to install the gems
 To run the app: <br>
 i.  Before you run the command below, make sure you are in the cash_register directory i.e. `cd cash_register` <br>
 ii. Run the command `ruby cash_register.rb` <br>
-iii. Follow the prompt i.e. press key `s` to continue shopping <br>
+iii. Follow the prompt i.e. press key `s` to continue shopping and  `q` to quit <br>
 iv. Enter the list of the product items to your basket by entering its product code seperated by comma in any order e.g. `SR1,SR1,GR1,SR1,CF1`. Note `GR1` is the product code for Green Tea, `SR1` is the product code Strawberry and `CF1` is the product code for Coffee
 
 # Running Test

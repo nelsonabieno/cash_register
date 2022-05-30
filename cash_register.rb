@@ -9,14 +9,19 @@ class CashRegister
       puts "*******WELCOME TO AMENITIZ CASH REGISTER*****"
       puts "***An interactive command line application***"
       puts "****************INSTRUCTIONS*****************"
-      puts "Press s to continue shopping"
+      puts "Press s to continue shopping and q to quit"
 
       response_key = gets.chomp
+      response_input = response_key.downcase
 
-      if response_key.downcase == 's'
+      if response_input == 'q'
+        puts "Thank you for using our app. Goodbye!"
+        return
+      elsif response_input == 's'
         puts"================================"
         puts "Here is a list of our products"
         puts"================================"
+
         product_hash = ProductStore.get_products(file_name)
         product_codes = product_hash.keys
 
@@ -25,13 +30,17 @@ class CashRegister
           puts "product code: #{product_code} | name: #{product_details["name"]}   | price: #{product_details["price"]}"
         end
 
-        # reads input items
-        puts "Add a list of the items to your basket by entering its product code seperated by comma"
-        input_list = gets.chomp
-        CashRegister.get_items_to_basket(input_list, product_hash)
+        CashRegister.read_items(product_hash)
       else
-        puts "Invalid input!"
+        puts "Invalid input! Please follow the instructions and try again"
       end
+    end
+
+    # reads input items
+    def read_items(product_hash)
+      puts "Add a list of the items to your basket by entering its product code seperated by comma e.g. SR1,SR1,CF1"
+      input_list = gets.chomp
+      CashRegister.get_items_to_basket(input_list, product_hash)
     end
 
     # adds input items to basket
@@ -40,7 +49,7 @@ class CashRegister
         basket_array = input_list.split(',')
         Basket.sort_items(basket_array, product_hash)
       else
-        puts "Invalid input!"
+        puts "Invalid input! Please follow the instructions and try again"
       end
     end
   end
