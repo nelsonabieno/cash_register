@@ -3,10 +3,9 @@ require_relative 'price'
 
 class Basket
   # sort and count items by their product codes
-  def self.sort_items(basket)
+  def self.sort_items(basket, product_hash)
     unknown_products = []
     product_count = {}
-    product_hash = ProductStore.get_products('./data/product_store.json')
 
     basket.each do |item|
       code = item.upcase
@@ -21,6 +20,6 @@ class Basket
       end
     end
 
-    Price.calculate(product_count)
+    Price.calculate(product_count, product_hash)
   end
 end
