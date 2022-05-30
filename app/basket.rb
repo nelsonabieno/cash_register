@@ -2,7 +2,7 @@ require_relative 'product_store'
 require_relative 'price'
 
 class Basket
-  # sort items by the product code
+  # sort and count items by their product codes
   def self.sort_items(basket)
     unknown_products = []
     product_count = {}
