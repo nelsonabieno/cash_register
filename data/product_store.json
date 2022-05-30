@@ -1,0 +1,17 @@
+{
+  "GR1": {
+    "name": "Green Tea",
+    "price": 3.11,
+    "discount": "ceo_discount"
+  },
+  "SR1": {
+    "name": "Strawberries",
+    "price": 5.00,
+    "discount": "coo_discount"
+  },
+  "CF1": {
+    "name": "Coffee",
+    "price": 11.23,
+    "discount": "vp_discount"
+  }
+}

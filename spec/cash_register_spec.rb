@@ -1,4 +1,4 @@
-require_relative '../cash_register.rb'
+require_relative '../cash_register'
 
 RSpec.describe CashRegister do
   context "adding products GR1,GR1 to basket should calculate total price" do
